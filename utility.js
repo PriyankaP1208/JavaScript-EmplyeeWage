@@ -39,21 +39,25 @@ class EmployeeWageComputation{
             default:
                 console.log("Wrong choice.");
         }
+        var wage=[];
+        var totalWage1=[];
         dailyWage=WAGE_PER_HOUR*FULL_DAY_HOUR;
         monthWage=dailyWage*WORKING_DAYS_PER_MONTH;
         console.log("Monthly Wage:"+monthWage);
-        let empCheck=Math.floor(Math.random()*2);
         while (days<20 && workingHours<100)
         {
+            let empCheck=Math.floor(Math.random()*2);
             switch(empCheck)
             {
                 case 0:
                     dailyWage=WAGE_PER_HOUR*FULL_DAY_HOUR;
+                    wage.push(dailyWage);
                     monthWage=dailyWage*WORKING_DAYS_PER_MONTH;
                     workingHours=workingHours+FULL_DAY_HOUR;
                     break;
                 case 1:
                     dailyWage=WAGE_PER_HOUR*PART_TIME_HOUR;
+                    wage.push(dailyWage);
                     monthWage=dailyWage*WORKING_DAYS_PER_MONTH;
                     workingHours=workingHours+PART_TIME_HOUR;
                     break;
@@ -61,9 +65,14 @@ class EmployeeWageComputation{
                     console.log("Wrong choice");
             }
             days++;
+            totalWage = totalWage+dailyWage;
+            totalWage1.push(totalWage);
         }
-        totalWage=(workingHours*days*WAGE_PER_HOUR);
+        //totalWage=(workingHours*days*WAGE_PER_HOUR);
+        wage.push(totalWage);
         console.log("Total Wages is:",totalWage);
+        console.log("Daily Wage along with total wage:");
+        console.log("Daily Wages:",wage,"Total Wages:",totalWage1);
         return totalWage;
     }
     workHours = () =>{
