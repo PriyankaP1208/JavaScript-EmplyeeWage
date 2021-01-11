@@ -69,10 +69,16 @@ class EmployeeWageComputation{
             totalWage1.push(totalWage);
         }
         //totalWage=(workingHours*days*WAGE_PER_HOUR);
-        wage.push(totalWage);
-        console.log("Total Wages is:",totalWage);
-        console.log("Daily Wage along with total wage:");
-        console.log("Daily Wages:",wage,"Total Wages:",totalWage1);
+        var map = new Map();
+        var map1 = new Map();
+        for (let i = 0; i < wage.length; i++) {
+            map.set(i,wage[i]);  
+        }
+        console.log("Daily Wages:",map);
+        for (let i = 0; i < totalWage1.length; i++) {
+            map1.set(i,totalWage1[i]);  
+        }
+        console.log("Total Wage:",map1);
         return totalWage;
     }
     workHours = () =>{
