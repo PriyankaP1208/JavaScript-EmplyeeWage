@@ -1,10 +1,10 @@
+const WAGE_PER_HOUR=20;
+const FULL_DAY_HOUR=8;
+const PART_TIME_HOUR=4;
+const WORKING_DAYS_PER_MONTH=20;
 class EmployeeWageComputation{
-    employeeWage()
+   employeeWage()
     {
-        const WAGE_PER_HOUR=20;
-        const FULL_DAY_HOUR=8;
-        const PART_TIME_HOUR=4;
-        const WORKING_DAYS_PER_MONTH=20;
         let dailyWage;
         let monthWage;
         let partTimeWage;
@@ -64,6 +64,12 @@ class EmployeeWageComputation{
         }
         totalWage=(workingHours*days*WAGE_PER_HOUR);
         console.log("Total Wages is:",totalWage);
+        return totalWage;
+    }
+    workHours = () =>{
+        let dailyWage=WAGE_PER_HOUR*FULL_DAY_HOUR;
+        let workHours=dailyWage/WAGE_PER_HOUR;
+        console.log("Work Hours:",workHours);
     }
 }
-module.exports=new EmployeeWageComputation();
+module.exports = new EmployeeWageComputation();
